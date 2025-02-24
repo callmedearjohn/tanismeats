@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 py-4 shadow-sm">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <motion.div
-          className="relative w-[60px] h-[60px]"
+          className="relative w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]"
         >
           <motion.div
             className="absolute inset-0 rounded-full bg-[#ffd559]"
@@ -32,7 +32,7 @@ export default function Navbar() {
               alt="Tanis Logo"
               width={100}
               height={100}
-              className="relative z-10 object-contain p-1 rounded-full"
+              className="relative z-10 object-contain rounded-full"
             />
           </Link>
         </motion.div>

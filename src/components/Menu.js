@@ -6,44 +6,44 @@ const menuItems = [
   {
     category: 'Ձկնեղեն',
     description: 'Հայաստանի լավագույն ձկնատեսակները՝ պատրաստված մեր շեֆ խոհարարների կողմից',
-    image: 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/3298180/pexels-photo-3298180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     items: [
       {
         name: 'Իշխան',
         description: 'Սևանի իշխան՝ պատրաստված ավանդական եղանակով',
-        image: 'https://images.unsplash.com/photo-1553701879-4aa576804f65?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/3763847/pexels-photo-3763847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       },
       {
         name: 'Սիգ',
         description: 'Թարմ սևանյան սիգ՝ համեմված հայկական խոտաբույսերով',
-        image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       },
       {
         name: 'Ստերլետ',
         description: 'Նուրբ համով ստերլետ՝ գրիլած բանջարեղենով',
-        image: 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/3298180/pexels-photo-3298180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       }
     ]
   },
   {
     category: 'Մսային Ուտեստներ',
     description: 'Հայկական ավանդական մսային ուտեստներ՝ պատրաստված մեր գլխավոր խոհարարի հատուկ բաղադրատոմսերով',
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     items: [
       {
         name: 'Խորոված',
         description: 'Հայկական խորոված՝ թարմ համեմունքներով և բանջարեղենով',
-        image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       },
       {
         name: 'Սթեյք',
         description: 'Պրեմիում որակի տավարի միս՝ հատուկ մարինադով',
-        image: 'https://images.unsplash.com/photo-1546833998-877b37c2e5c4?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       },
       {
         name: 'Քյաբաբ',
         description: 'Ավանդական հայկական քյաբաբ՝ թարմ կանաչիներով',
-        image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&q=80'
+        image: 'https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
       }
     ]
   }
@@ -74,12 +74,14 @@ export default function Menu() {
                 <h3 className="text-3xl font-semibold mb-4 text-[#ffd559]">{category.category}</h3>
                 <p className="text-gray-700 text-lg mb-6">{category.description}</p>
               </div>
-              <div className="md:w-1/2 relative h-[300px] rounded-lg overflow-hidden">
+              <div className="w-full h-[200px] md:h-[300px] md:w-1/2 relative rounded-lg overflow-hidden">
                 <Image
                   src={category.image}
                   alt={category.category}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
+                  priority={true}
                 />
               </div>
             </div>
@@ -91,11 +93,12 @@ export default function Menu() {
                   whileHover={{ y: -10 }}
                   className="bg-gray-50 rounded-lg overflow-hidden shadow-lg"
                 >
-                  <div className="relative h-48">
+                  <div className="relative h-[200px] md:h-48">
                     <Image
                       src={item.image}
                       alt={item.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
                   </div>
